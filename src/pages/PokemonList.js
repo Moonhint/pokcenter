@@ -1,7 +1,15 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import { Spin } from 'antd';
 import { gql, useQuery } from '@apollo/client';
 import Pokemons from '../components/Pokemons';
 import CustomNavbar from '../components/CustomNavbar';
+
+const styleSpinner = css`
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+`
 
 function PokemonList() {
 
@@ -32,7 +40,7 @@ function PokemonList() {
             variables: gqlVariables,
         });
     
-        if (loading) return 'Loading...';
+        if (loading) return <Spin css={styleSpinner}/>;
         if (error) return `Error! ${error.message}`;
 
         const pokemons = data.pokemons;

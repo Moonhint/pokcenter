@@ -1,16 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Button, Popconfirm } from 'antd';
+import { Card } from 'antd';
 import LocalStorageHelper from '../helper/LocalStorageHelper';
 
+const { Meta } = Card;
+
 const style = css`
-    border: 1px solid black;
     width: 150px;
     margin: 4px;
     text-align: center;
-    padding: 4px;
-    h5:first-letter {
+    .ant-card-meta-title:first-letter {
         text-transform:capitalize;
+    }
+    .ant-card-meta-detail > div:not(:last-child) {
+        margin-bottom: 0;
     }
 `
 
@@ -21,14 +24,14 @@ function countOwnPokemon(pokemonName){
 
 function PokemonListItem({ pokemonData }) {
     return (
-        <div css={style}>
-            <a href={`/pokemon/${pokemonData.name}`}>
-                <img src={pokemonData.image} alt=""/>
-                <h5>{pokemonData.name}</h5>
-                <p>Own ({countOwnPokemon(pokemonData.name)})</p>
-                <Button type="link" shape="round">Take a look</Button>
-            </a>
-        </div>
+        <a href={`/pokemon/${pokemonData.name}`}>
+            <Card css={style}
+                hoverable
+                cover={<img alt="" src={pokemonData.image} />}
+                extra={<a href="#">Sneak Peek</a>}>
+                <Meta title={pokemonData.name} description={`Own (${countOwnPokemon(pokemonData.name)})`} />
+            </Card>
+        </a>
     );
 }
 

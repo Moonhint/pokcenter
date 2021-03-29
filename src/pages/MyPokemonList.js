@@ -11,6 +11,15 @@ import sadFaceImg from '../imgs/sad-face.png';
 const style = css`
     text-align: center;
     height: 100vh;
+    h4 {
+        color: #120f7d;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 32px;
+        font-family: monospace;
+        text-decoration: underline;
+    }
     .img-sad-face {
         padding-top: 42px;
         width: 20%;
@@ -32,7 +41,7 @@ function MyPokemonList() {
     const [pokemons, setPokemons] = useState([]);
 
     function getMyPokemons() {
-        const myPokemonList = LocalStorageHelper.getMyPokemonList();
+        const myPokemonList = LocalStorageHelper.getMyPokemonList() || {};
         const myPokemonKeys = Object.keys(myPokemonList);
         const aggrPokemons = [];
         for (let index = 0; index < myPokemonKeys.length; index++) {
@@ -77,6 +86,7 @@ function MyPokemonList() {
     return (
         <div css={style}>
             <CustomNavbar backToList/>
+            <h4>My Pokemon</h4>
             {MyPokemonList}
         </div>
     );

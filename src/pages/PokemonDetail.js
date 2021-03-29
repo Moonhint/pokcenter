@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useState, useEffect } from 'react';
-import { Button, Modal, Input } from 'antd';
+import { Button, Modal, Input, message } from 'antd';
 import PokemonApi from '../apis/pokemon';
 import CustomNavbar from '../components/CustomNavbar';
 import PokemonMoveItem from '../components/PokemonMoveItem';
@@ -62,11 +62,22 @@ function PokemonDetail({ name }) {
 
     const handleOk = () => {
         if (isSuccessCatch){
-            LocalStorageHelper.saveMyPokemonList(pokemon, nickname);
+            if (nickname === ''){
+                return message.error('give a name to the pokemon', 1.5);
+            }
+            if (!LocalStorageHelper.checkIfAbleToSave(nickname)){
+                message.error('already have pokemon with that nick', 1.5);
+            }else{
+                LocalStorageHelper.saveMyPokemonList(pokemon, nickname);
+                message.success(`${nickname} the ${pokemon.name} successfully added to my collection`, 1.5);
+                setIsModalVisible(false);
+                setNickname('');
+            }
+        }else{
+            setIsSuccessCatch(false);
+            setIsModalVisible(false);
+            setNickname('');
         }
-        setIsModalVisible(false);
-        setIsSuccessCatch(false);
-        setNickname('');
     };
 
     const catchPokemon = () => {
@@ -119,9 +130,11 @@ function PokemonDetail({ name }) {
             <Input placeholder="Named your pokemon" onChange={onNicknameChanged} />
         </div>
     }else{
-        catchModalTitle = 'Failed';
+        if (pokemon){
+            catchModalTitle = `Unable to catch ${pokemon.name}`;
+        }
         CatchModalContent = <div className="modal-content-failed">
-            Failed
+            Pokemon run away, try again!
         </div>
     }
 

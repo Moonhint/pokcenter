@@ -4,6 +4,16 @@ import { Button } from 'antd';
 import PokemonListItem from './PokemonListItem';
 
 const style = css`
+    font-family: monospace;
+    h4 {
+        color: #6d581e;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 32px;
+        font-family: monospace;
+        text-decoration: underline;
+    }
     .container-pokemon {
         padding: 24px;
         display: flex;
@@ -20,6 +30,7 @@ const style = css`
 function Pokemons({ entries, onLoadMore }) {
     return (
         <div css={style}>
+            <h4>List Pokemon</h4>
             <div class="container-pokemon">
                 {        
                     entries.map((pokemon, index) =>

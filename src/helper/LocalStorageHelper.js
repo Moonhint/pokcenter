@@ -22,6 +22,16 @@ const LocalStorageHelper = {
             myPokemons[pokemon.name].pokemons.splice(indexCurrentNickname, 1);
         }
         return localStorage.setItem(MY_POKEMON_KEY, JSON.stringify(myPokemons));
+    },
+    checkIfAbleToSave(nickname){
+        let myPokemonList = JSON.parse(localStorage.getItem(MY_POKEMON_KEY)) || {};
+        const myPokemonKeys = Object.keys(myPokemonList);
+        const aggrPokemons = [];
+        for (let index = 0; index < myPokemonKeys.length; index++) {
+            const key = myPokemonKeys[index];
+            aggrPokemons.push(...myPokemonList[key].pokemons);
+        }
+        return aggrPokemons.findIndex(n => n.nickname === nickname) === -1;
     }
 }
 
