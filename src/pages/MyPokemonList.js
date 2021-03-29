@@ -6,7 +6,7 @@ import LocalStorageHelper from '../helper/LocalStorageHelper';
 import CustomNavbar from '../components/CustomNavbar';
 import MyPokemonListItem from '../components/MyPokemonListItem';
 
-import sadFaceImg from '../imgs/sad-face.png';
+import sadFaceImg from '../imgs/psyduck.png';
 
 const style = css`
     text-align: center;
@@ -21,7 +21,8 @@ const style = css`
         text-decoration: underline;
     }
     .img-sad-face {
-        padding-top: 42px;
+        padding-top: 0;
+        padding-bottom: 0;
         width: 20%;
     }
     .container-pokemon {
