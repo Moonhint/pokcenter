@@ -7,6 +7,8 @@ import CustomNavbar from '../components/CustomNavbar';
 import PokemonMoveItem from '../components/PokemonMoveItem';
 import LocalStorageHelper from '../helper/LocalStorageHelper';
 
+import pokeImg from '../imgs/wiggle.gif';
+
 const style = css`
     .pokemon-detail {
         padding: 24px;
@@ -28,11 +30,19 @@ const style = css`
         text-align: center;
         margin: 12px 0;
     }
+
     @media (max-width: 420px) {
         .pokemon-detail .container-img img {
             width: 50%;
         }
     }
+`
+
+const styleModal = css`
+    text-align: center; 
+    img {
+        margin-bottom: 24px;
+    }   
 `
 
 function PokemonDetail({ name }) {
@@ -125,10 +135,13 @@ function PokemonDetail({ name }) {
     let catchModalTitle;
     let CatchModalContent;
     if (isSuccessCatch){
-        catchModalTitle = 'Success';
-        CatchModalContent = <div className="modal-content-success">
-            <Input placeholder="Named your pokemon" onChange={onNicknameChanged} />
-        </div>
+        if (pokemon){
+            catchModalTitle = `Successfully catch ${pokemon.name}`;
+            CatchModalContent = <div css={styleModal}>
+                <img src={pokeImg} alt=""/>
+                <Input placeholder={`Named your ${pokemon.name}`} onChange={onNicknameChanged} />
+            </div>
+        }
     }else{
         if (pokemon){
             catchModalTitle = `Unable to catch ${pokemon.name}`;
