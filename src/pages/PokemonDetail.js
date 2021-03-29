@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useState, useEffect } from 'react';
-import { Button, Modal, Input, message } from 'antd';
+import { Button, Modal, Input, message, Spin } from 'antd';
 import PokemonApi from '../apis/pokemon';
 import CustomNavbar from '../components/CustomNavbar';
 import PokemonMoveItem from '../components/PokemonMoveItem';
@@ -43,6 +43,11 @@ const styleModal = css`
     img {
         margin-bottom: 24px;
     }   
+`
+const styleSpinner = css`
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
 `
 
 function PokemonDetail({ name }) {
@@ -105,7 +110,7 @@ function PokemonDetail({ name }) {
 
     let PokemonDetail;
     if (onLoading) {
-        PokemonDetail = 'On Loading..';
+        PokemonDetail = <Spin css={styleSpinner}/>;;
     } else {
         PokemonDetail = <div className="pokemon-detail">
             <h5>{pokemon.name}</h5>
