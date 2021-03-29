@@ -5,7 +5,6 @@ import client from './configs/apollo-client';
 import routes from './configs/routes';
 import 'antd/dist/antd.css';
 
-
 function App() {
   const routeResult = useRoutes(routes);
   return (
