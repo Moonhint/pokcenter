@@ -19,6 +19,11 @@ const style = css`
         width: 26px;
         height: 26px;
     }
+
+    a {
+        font-weight: 600;
+        font-size: 15px;
+    }
 `
 
 function BackRoute(backToList){
