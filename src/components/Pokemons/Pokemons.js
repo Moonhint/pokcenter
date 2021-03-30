@@ -1,31 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { style } from './styles';
 import { Button } from 'antd';
 import PokemonListItem from '../PokemonListItem';
-
-const style = css`
-    font-family: monospace;
-    h4 {
-        color: #6d581e;
-        font-size: 24px;
-        font-weight: 600;
-        text-align: center;
-        margin-top: 32px;
-        font-family: monospace;
-        text-decoration: underline;
-    }
-    .container-pokemon {
-        padding: 24px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .cta {
-        display: flex;
-        justify-content: center;
-        padding: 42px 32px;
-    }
-`
 
 function Pokemons({ entries, onLoadMore }) {
     return (

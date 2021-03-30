@@ -1,21 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { style, stylePokemonMoveCard } from './styles';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
-const style = css`
-
-`
-
-const stylePokemonMoveCard= css`
-    border: 1px solid black;
-    padding: 12px;
-    margin-top: 12px;
-
-    .name {
-        font-weight: 600;
-    }
-`
 
 function PokemonMoveItem({ pokemonMoveUrl }) {
     const [onLoading, setOnLoading] = useState(true);

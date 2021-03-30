@@ -1,22 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { style } from './styles';
 import { Button, Popconfirm, Card } from 'antd';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
 
 const { Meta } = Card;
-
-const style = css`
-    font-family: monospace;
-    width: 150px;
-    margin: 4px;
-    text-align: center;
-    .ant-card-meta-title:first-letter {
-        text-transform:capitalize;
-    }
-    .ant-card-meta-detail > div:not(:last-child) {
-        margin-bottom: 0;
-    }
-`
 
 function releasePokemon({ pokemonData, removeMyPokemonFromList }){
     LocalStorageHelper.removeMyPokemonList(pokemonData, pokemonData.nickname);

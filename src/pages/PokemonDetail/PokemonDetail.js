@@ -1,54 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { style, styleModal, styleSpinner } from './styles';
 import { useState, useEffect } from 'react';
 import { Button, Modal, Input, message, Spin } from 'antd';
 import PokemonApi from '../../apis/pokemon';
 import CustomNavbar from '../../components/CustomNavbar';
 import PokemonMoveItem from '../../components/PokemonMoveItem';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
-
 import pokeImg from './imgs/wiggle.gif';
-
-const style = css`
-    .pokemon-detail {
-        padding: 24px;
-    }
-    .pokemon-detail h5 {
-        font-weight: 600;
-        font-size: 24px;
-    }
-    .pokemon-detail h5:first-letter {
-        text-transform:capitalize;
-    }
-    .pokemon-detail .container-img {
-        text-align: center;
-    }
-    .pokemon-detail .container-img img{
-        width: 15%;
-    }
-    .cta {
-        text-align: center;
-        margin: 12px 0;
-    }
-
-    @media (max-width: 420px) {
-        .pokemon-detail .container-img img {
-            width: 50%;
-        }
-    }
-`
-
-const styleModal = css`
-    text-align: center; 
-    img {
-        margin-bottom: 24px;
-    }   
-`
-const styleSpinner = css`
-    display: flex;
-    justify-content: center;
-    margin-top: 42px;
-`
 
 function PokemonDetail({ name }) {
     const [onLoading, setOnLoading] = useState(true);
