@@ -2,12 +2,12 @@
 import { css } from '@emotion/react';
 import { useState, useEffect } from 'react';
 import { Button, Modal, Input, message, Spin } from 'antd';
-import PokemonApi from '../apis/pokemon';
-import CustomNavbar from '../components/CustomNavbar';
-import PokemonMoveItem from '../components/PokemonMoveItem';
-import LocalStorageHelper from '../helper/LocalStorageHelper';
+import PokemonApi from '../../apis/pokemon';
+import CustomNavbar from '../../components/CustomNavbar';
+import PokemonMoveItem from '../../components/PokemonMoveItem';
+import LocalStorageHelper from '../../helper/LocalStorageHelper';
 
-import pokeImg from '../imgs/wiggle.gif';
+import pokeImg from './imgs/wiggle.gif';
 
 const style = css`
     .pokemon-detail {

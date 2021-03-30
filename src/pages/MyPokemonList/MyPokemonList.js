@@ -2,11 +2,11 @@
 import { css } from '@emotion/react';
 import { useState, useEffect } from 'react';
 import { Button } from 'antd';
-import LocalStorageHelper from '../helper/LocalStorageHelper';
-import CustomNavbar from '../components/CustomNavbar';
-import MyPokemonListItem from '../components/MyPokemonListItem';
+import LocalStorageHelper from '../../helper/LocalStorageHelper';
+import CustomNavbar from '../../components/CustomNavbar';
+import MyPokemonListItem from '../../components/MyPokemonListItem';
 
-import sadFaceImg from '../imgs/psyduck.png';
+import sadFaceImg from './imgs/psyduck.png';
 
 const style = css`
     text-align: center;

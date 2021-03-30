@@ -2,8 +2,8 @@
 import { css } from '@emotion/react';
 import { Spin } from 'antd';
 import { gql, useQuery } from '@apollo/client';
-import Pokemons from '../components/Pokemons';
-import CustomNavbar from '../components/CustomNavbar';
+import Pokemons from '../../components/Pokemons';
+import CustomNavbar from '../../components/CustomNavbar';
 
 const styleSpinner = css`
     display: flex;
