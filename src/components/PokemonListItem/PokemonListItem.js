@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Card } from 'antd';
-import LocalStorageHelper from '../helper/LocalStorageHelper';
+import LocalStorageHelper from '../../helper/LocalStorageHelper';
 
 const { Meta } = Card;
 

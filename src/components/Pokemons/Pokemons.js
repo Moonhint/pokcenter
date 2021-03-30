@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Button } from 'antd';
-import PokemonListItem from './PokemonListItem';
+import PokemonListItem from '../PokemonListItem';
 
 const style = css`
     font-family: monospace;

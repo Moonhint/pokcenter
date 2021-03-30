@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import pokeBallImg from '../imgs/pokeball.png';
+import pokeBallImg from './imgs/pokeball.png';
 
 const style = css`
     background: #f7f7f7;
