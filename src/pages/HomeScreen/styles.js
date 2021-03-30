@@ -10,8 +10,8 @@ export const style = css`
     padding: 24px;
     height: 100vh;
     .header {
-        width: 320px;
-        height: 170px;
+        width: 640px;
+        height: 340px;
     }  
     .ant-btn-round.ant-btn-lg {
         height: 60px;
@@ -25,8 +25,8 @@ export const style = css`
     }
     @media (max-width: 420px) {
         .header {
-            width: 640px;
-            height: 340px;
+            width: 320px;
+            height: 170px;
         }  
     }
 `
