@@ -14,7 +14,7 @@ function MyPokemonListItem({ pokemonData, removeMyPokemonFromList }) {
     return (
         <Card css={style}
             hoverable
-            cover={<img alt="" src={pokemonData.sprites.front_default} />}
+            cover={<img width="150px" height="150px" alt="" src={pokemonData.sprites.front_default} />}
             extra={<Popconfirm
                 placement="topLeft"
                 title={`Release ${pokemonData.nickname} the ${pokemonData.name}?`}

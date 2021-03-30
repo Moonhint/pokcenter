@@ -15,17 +15,13 @@ export const style = css`
     .img-sad-face {
         padding-top: 0;
         padding-bottom: 0;
-        width: 20%;
+        width: 280px;
+        height: 280px;
     }
     .container-pokemon {
         padding: 24px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    }
-    @media (max-width: 420px) {
-        .img-sad-face {
-            width: 80%;
-        }  
     }
 `

@@ -15,7 +15,7 @@ function PokemonListItem({ pokemonData }) {
         <a href={`/pokemon/${pokemonData.name}`}>
             <Card css={style}
                 hoverable
-                cover={<img alt="" src={pokemonData.image} />}
+                cover={<img width="150px" height="150px" alt="" src={pokemonData.image} />}
                 extra={<a href="#">Sneak Peek</a>}>
                 <Meta title={pokemonData.name} description={`Owned (${countOwnPokemon(pokemonData.name)})`} />
             </Card>
