@@ -6,7 +6,7 @@ import locale from './locale';
 
 function HomeScreen() {
     const headerImg = 'https://storage.googleapis.com/file-dbucket/pokcenter/header.png';
-
+    
     return (
         <div css={style}>
             <LazyLoadImage className="header" src={headerImg} alt="" data-test="img-header" />
