@@ -3,9 +3,10 @@ import { Button } from 'antd';
 import { style } from './styles';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import locale from './locale';
-import headerImg from './imgs/header.png';
 
 function HomeScreen() {
+    const headerImg = 'https://storage.googleapis.com/file-dbucket/pokcenter/header.png';
+
     return (
         <div css={style}>
             <LazyLoadImage className="header" src={headerImg} alt="" data-test="img-header" />
