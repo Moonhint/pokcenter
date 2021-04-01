@@ -14,17 +14,15 @@ export const style = css`
     .pokemon-detail .container-img {
         text-align: center;
     }
-    .pokemon-detail .container-img img{
-        width: 15%;
-    }
     .cta {
         text-align: center;
         margin: 12px 0;
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 320px) {
         .pokemon-detail .container-img img {
-            width: 50%;
+            width: 130px;
+            height: 130px;
         }
     }
 `

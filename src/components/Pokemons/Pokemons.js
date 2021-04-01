@@ -2,21 +2,22 @@
 import { style } from './styles';
 import { Button } from 'antd';
 import PokemonListItem from '../PokemonListItem';
+import locale from './locale';
 
 function Pokemons({ entries, onLoadMore }) {
     return (
         <div css={style}>
-            <h4>List Pokemon</h4>
-            <div class="container-pokemon">
+            <h4>{locale.HEADER_LIST}</h4>
+            <div className="container-pokemon">
                 {        
                     entries.map((pokemon, index) =>
                         <PokemonListItem key={index} pokemonData={pokemon}/>
                     )
                 }
             </div>
-            <div class="cta">
+            <div className="cta">
                 <Button onClick={onLoadMore} type="primary" shape="round" size="large">
-                    Load More
+                    {locale.BTN_LOAD_MORE}
                 </Button>
             </div>
         </div>

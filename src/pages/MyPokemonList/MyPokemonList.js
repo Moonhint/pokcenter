@@ -2,6 +2,7 @@
 import { style } from './styles';
 import { useState, useEffect } from 'react';
 import { Button } from 'antd';
+import locale from './locale';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
 import CustomNavbar from '../../components/CustomNavbar';
 import MyPokemonListItem from '../../components/MyPokemonListItem';
@@ -46,7 +47,7 @@ function MyPokemonList() {
     }else{
         MyPokemonList = <div>
             <img className="img-sad-face" src={sadFaceImg} alt=""/>
-            <p>You have no pokemon..</p>
+            <p>{locale.TXT_NO_POKEMON}</p>
             <a href="/pokemon">
                 <Button type="primary" size="large" shape="round">Let's Catch Em</Button>
             </a>
@@ -56,7 +57,7 @@ function MyPokemonList() {
     return (
         <div css={style}>
             <CustomNavbar backToList/>
-            <h4>My Pokemon</h4>
+            <h4>{locale.HEADER_MY_POKEMON}</h4>
             {MyPokemonList}
         </div>
     );

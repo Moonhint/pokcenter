@@ -2,6 +2,7 @@
 import { style } from './styles';
 import { Button, Popconfirm, Card } from 'antd';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
+import locale from './locale';
 
 const { Meta } = Card;
 
@@ -22,7 +23,7 @@ function MyPokemonListItem({ pokemonData, removeMyPokemonFromList }) {
                 okText="Yes"
                 cancelText="No"
                 >
-                <Button type="danger" size="small" shape="round">Release</Button>
+                <Button type="danger" size="small" shape="round">{locale.BTN_RELEASE}</Button>
             </Popconfirm>}>
             <Meta title={pokemonData.nickname} description={pokemonData.name} />
         </Card>

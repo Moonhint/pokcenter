@@ -7,6 +7,7 @@ import CustomNavbar from '../../components/CustomNavbar';
 import PokemonMoveItem from '../../components/PokemonMoveItem';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
 import pokeImg from './imgs/wiggle.gif';
+import locale from './locale';
 
 function PokemonDetail({ name }) {
     const [onLoading, setOnLoading] = useState(true);
@@ -68,22 +69,22 @@ function PokemonDetail({ name }) {
 
     let PokemonDetail;
     if (onLoading) {
-        PokemonDetail = <Spin css={styleSpinner}/>;;
+        PokemonDetail = <Spin css={styleSpinner}/>;
     } else {
         PokemonDetail = <div className="pokemon-detail">
             <h5>{pokemon.name}</h5>
             <div className="container-type">
-                <span>type: {pokemon.types.map(type => type.type.name).join(', ')}</span>
+                <span>{locale.TYPE} {pokemon.types.map(type => type.type.name).join(', ')}</span>
             </div>
             <div className="container-img">
-                <img src={pokemon.sprites.front_default} alt=""/>
-                <img src={pokemon.sprites.back_default} alt=""/>
+                <img width="150px" height="150px" src={pokemon.sprites.front_default} alt=""/>
+                <img width="150px" height="150px" src={pokemon.sprites.back_default} alt=""/>
             </div>
             <div className="cta">
-                <Button onClick={catchPokemon} type="primary" size="large" shape="round">Catch</Button>
+                <Button onClick={catchPokemon} type="primary" size="large" shape="round">{locale.BTN_CATCH}</Button>
             </div>
             <div className="container-move">
-                <span><b>Moves:</b></span>
+                <span><b>{locale.MOVES}</b></span>
                 {pokemon.moves.map((move, index) => {
                     return <PokemonMoveItem key={index} pokemonMoveUrl={move.move.url}/>
                 })}
@@ -110,7 +111,7 @@ function PokemonDetail({ name }) {
             catchModalTitle = `Unable to catch ${pokemon.name}`;
         }
         CatchModalContent = <div className="modal-content-failed">
-            Pokemon run away, try again!
+            {locale.RUN_AWAY}
         </div>
     }
 
@@ -124,7 +125,7 @@ function PokemonDetail({ name }) {
                 closable={false} 
                 footer={[
                     <Button key="submit" type="primary" onClick={handleOk}>
-                      Ok
+                      {locale.BTN_OK}
                     </Button>
                 ]}
                 >
