@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { style } from './styles';
 import { Card } from 'antd';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
 import locale from './locale';
 
@@ -16,7 +17,7 @@ function PokemonListItem({ pokemonData }) {
         <a href={`/pokemon/${pokemonData.name}`}>
             <Card css={style}
                 hoverable
-                cover={<img width="150px" height="150px" alt="" src={pokemonData.image} />}
+                cover={<LazyLoadImage width="150px" height="150px" alt="" src={pokemonData.image} />}
                 extra={<a href="#">{locale.BTN_VIEW}</a>}>
                 <Meta title={pokemonData.name} description={`Owned (${countOwnPokemon(pokemonData.name)})`} />
             </Card>

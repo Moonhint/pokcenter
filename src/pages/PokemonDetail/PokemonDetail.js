@@ -2,6 +2,7 @@
 import { style, styleModal, styleSpinner } from './styles';
 import { useState, useEffect } from 'react';
 import { Button, Modal, Input, message, Spin } from 'antd';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PokemonApi from '../../apis/pokemon';
 import CustomNavbar from '../../components/CustomNavbar';
 import PokemonMoveItem from '../../components/PokemonMoveItem';
@@ -77,8 +78,9 @@ function PokemonDetail({ name }) {
                 <span>{locale.TYPE} {pokemon.types.map(type => type.type.name).join(', ')}</span>
             </div>
             <div className="container-img">
-                <img width="150px" height="150px" src={pokemon.sprites.front_default} alt=""/>
-                <img width="150px" height="150px" src={pokemon.sprites.back_default} alt=""/>
+                <LazyLoadImage width="150px" height="150px" src={pokemon.sprites.front_default} alt="" />
+                <LazyLoadImage width="150px" height="150px" src={pokemon.sprites.back_default} alt="" />
+                <img />
             </div>
             <div className="cta">
                 <Button onClick={catchPokemon} type="primary" size="large" shape="round">{locale.BTN_CATCH}</Button>

@@ -2,6 +2,7 @@
 import { style } from './styles';
 import { useState, useEffect } from 'react';
 import { Button } from 'antd';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import locale from './locale';
 import LocalStorageHelper from '../../helper/LocalStorageHelper';
 import CustomNavbar from '../../components/CustomNavbar';
@@ -46,7 +47,7 @@ function MyPokemonList() {
         </div>
     }else{
         MyPokemonList = <div>
-            <img className="img-sad-face" src={sadFaceImg} alt=""/>
+            <LazyLoadImage className="img-sad-face" src={sadFaceImg} alt="" />
             <p>{locale.TXT_NO_POKEMON}</p>
             <a href="/pokemon">
                 <Button type="primary" size="large" shape="round">Let's Catch Em</Button>
